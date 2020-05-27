@@ -5,7 +5,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:id="@+id/mainLayout"
+    android:focusableInTouchMode="true"
     tools:context=".MainActivity">
+
+    <!-- android:focusableInTouchMode="true" to hide the keyboard when then activity start -->
 
     <TextView
         android:layout_width="wrap_content"
@@ -25,6 +29,7 @@
         app:srcCompat="@android:drawable/btn_star_big_on" />
 
     <TextView
+        android:id="@+id/nickname_text"
         style="@style/margin_style"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -32,21 +37,25 @@
         android:visibility="gone" />
 
     <EditText
-        android:id="@+id/name_editText"
+        android:id="@+id/nickname_edit"
         style="@style/margin_style"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="What is your nickname ?"
-        android:inputType="textPersonName" />
+        android:focusable="auto"
+        android:gravity="center"
+        android:hint="@string/what_is_your_nickname"
+        android:inputType="textPersonName"
+        android:isScrollContainer="false"
+        android:singleLine="true" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/done_button"
         style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="Validate" />
+        android:text="@string/validate" />
 
     <ScrollView
         style="@style/margin_style"
