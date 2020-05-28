@@ -4,6 +4,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <data>
+        <variable
+            name="myName"
+            type="com.papailleenqueue.aboutme.MyName" />
+    </data>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -15,11 +21,12 @@
         <!-- android:focusableInTouchMode="true" to hide the keyboard when then activity start -->
 
         <TextView
+            android:id="@+id/name_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:paddingLeft="15dp"
-            android:text="@string/papailleenqueue"
+            android:text="@={myName.name}"
             style="@style/margin_style" />
 
         <ImageView
@@ -37,6 +44,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:text="@={myName.nickname}"
             android:visibility="gone" />
 
         <EditText
